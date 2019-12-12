@@ -1,14 +1,20 @@
 import React from 'react'
+import { Props } from '../../App'
 
-interface Props {
 
-}
 
-export const SearchComponent: React.FC<Props> = () => {
+export const SearchComponent: React.FC<Props> = (props) => {
+    const handleChange = (e: any) => {
+        const newStore = { ...props.store };
+        newStore.searchBy = e.target.value
+        props.setStore({
+            ...newStore
+        })
+    }
     return (
         <div className="self-center">
             <div className="flex">
-                <input className="w-full p-2 bg-transparent text-white placeholder-white border-b-2 border-white" type="text" placeholder="Search" />
+                <input className="w-full p-2 bg-transparent text-white placeholder-white border-b-2 border-white" type="text" placeholder="Search" onChange={(e) => { handleChange(e) }} value={props.store.searchBy} />
                 <button className="w-auto flex justify-end items-center text-blue p-2 hover:text-blue-light">
                     <i className="text-white absolute fill-current ">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
