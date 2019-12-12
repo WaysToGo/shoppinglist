@@ -29,7 +29,7 @@ const ShoppintList: React.FC<Props> = (props) => {
 
     const productFilterUtility: any = () => {
         const filteredData = actualData.filter(a => {
-            return a.name.toLowerCase().includes(props.store.searchBy) && a.afterDiscount > props.store.filterBy
+            return a.name.toLowerCase().includes(props.store.searchBy.toLowerCase()) && a.afterDiscount > props.store.filterBy
         })
 
         switch (props.store.sortBy) {
