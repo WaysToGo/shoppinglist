@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FilterComponent() {
     return (
-        <div className="h-full w-1/5">
+        <div className="h-full w-1/5 hidden sm:block">
             <div>
                 <div className="font-bold my-5">Filters</div>
                 <div>
